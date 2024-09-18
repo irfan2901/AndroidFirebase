@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/phoneNumberFragment">
+
+    <fragment
+        android:id="@+id/phoneNumberFragment"
+        android:name="com.example.firebasedemo.PhoneNumberFragment"
+        android:label="fragment_phone_number"
+        tools:layout="@layout/fragment_phone_number" >
+        <action
+            android:id="@+id/action_phoneNumberFragment_to_otpVerificationFragment"
+            app:destination="@id/otpVerificationFragment" />
+        <action
+            android:id="@+id/action_phoneNumberFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="com.example.firebasedemo.OtpVerificationFragment"
+        android:label="fragment_otp_verification"
+        tools:layout="@layout/fragment_otp_verification" >
+        <action
+            android:id="@+id/action_otpVerificationFragment_to_phoneNumberFragment"
+            app:destination="@id/phoneNumberFragment" />
+        <action
+            android:id="@+id/action_otpVerificationFragment_to_setupProfileFragment"
+            app:destination="@id/setupProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupProfileFragment"
+        android:name="com.example.firebasedemo.SetupProfileFragment"
+        android:label="fragment_setup_profile"
+        tools:layout="@layout/fragment_setup_profile" >
+        <action
+            android:id="@+id/action_setupProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.firebasedemo.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.example.firebasedemo.UpdateProfileFragment"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" >
+        <action
+            android:id="@+id/action_updateProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>
